@@ -10,6 +10,8 @@ import jieba
 import jieba.analyse
 import numpy as np
 import re
+import json
+from compare import similarity
 
 def calc_simhash(content):
     '''
@@ -83,16 +85,6 @@ def hamming_dis(simhash1, simhash2):#计算汉明距离
         n &= (n-1)
         i+=1
     return i
-
-def similarity(diff_value):
-    print('相似程度为',end = '')
-    print(100 - diff_value)
-    if diff_value < 10:
-        print('报告极度相似')
-    elif diff_value < 30:
-        print('报告较为相似')
-    elif diff_value < 100:
-        print('报告不像似')
 
 if __name__ == '__main__':
     simhash_1 = calc_simhash(u'''我是独生女，他们的希望都在我这里 。越是这样想的越多，想的越多越痛苦，我快要发疯啦，我的性格本身就急躁，再加上这件事压抑着，谁都无法倾诉，更加抑郁。

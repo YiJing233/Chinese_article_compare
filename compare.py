@@ -3,6 +3,7 @@ import jieba.analyse
 import numpy as np
 import re
 import docx
+import json
 
 from ariticle_compare_in_simhash import calc_simhash
 from ariticle_compare_in_simhash import hamming_dis
