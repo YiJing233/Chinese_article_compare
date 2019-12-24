@@ -19,5 +19,17 @@ def similarity(diff_value):
         print('报告不像似')
 
 data = []
+value = []
+
 for line in open("data.txt","r"): #设置文件对象并读取每一行文件
     data.append(line)               #将每一行文件加入到list中
+
+for line in data:
+    line = line.split()
+    value.append(hamming_dis(line(0),simhash2))
+
+maximum = max(value)
+
+similarity(maximum)
+print("相似度最高文档：",end = '')
+print(line(1))
